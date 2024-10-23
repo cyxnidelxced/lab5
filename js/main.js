@@ -1,5 +1,56 @@
 import { cueTimer } from "./modules/cuepoints.js";
 
+document.addEventListener("DOMContentLoaded", init);
+
+function init() {
+    /**
+     * Shortcut variables
+     */
+    const howlAudio = document.querySelector(".howl_audio");
+    const fastf = document.getElementById("fastf");
+    const slow = document.getElementById("slow");
+    const normalplay = document.getElementById("normalplay");
+    const pick = document.getElementById("pick");
+
+    /**
+     * prepare the audio and video for playing
+     */
+    howlAudio.src = "a/howl_og.mp4";
+    howlAudio.load();
+    howlAudio.volume = 0.5;
+
+    /**
+     * create the button event listeners to control the audio
+     */
+
+    fastf.addEventListener("click", (e) => {
+        howlAudio.playbackRate = 2;
+    });
+
+    slow.addEventListener("click", (e) => {
+        howlAudio.playbackRate = 0.5;
+    });
+
+    normalplay.addEventListener("click", (e) => {
+        howlAudio.playbackRate = 1;
+    });
+
+    /**
+     * select lists emit a "change" event when the choice is changed
+     */
+    pick.addEventListener("change", (e) => {
+        // save the audio's current place in the song.
+        let time = howlAudio.currentTime;
+
+        howlAudio.src = e.target.value;
+        howlAudio.load();
+        howlAudio.play();
+
+        // set the new song to the same place as the previous one.
+        howlAudio.currentTime = time;
+    });
+} // end init function
+
 document.addEventListener("DOMContentLoaded", (e) => {
 
     var myCues = [
@@ -23,8 +74,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     });
 
 });
-
-
 
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks

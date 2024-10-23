@@ -8,8 +8,15 @@ body {
     background: rgb(204, 219, 240);
 }
   
-h1 {
+h1, h3 {
     text-align:center;
+}
+
+h3 {
+    margin-top:2em;
+}
+hr {
+    margin: 3rem 0;
 }
    
 #container {
@@ -26,7 +33,7 @@ h1 {
     width:450px;
     height:auto;
 }
-  
+
 .col1 {
     border:1px solid black;
     height: fit-content;

@@ -12,6 +12,34 @@
 <body>
     <h1>Howl's Moving Castle</h1>
 
+    <h3>Movie Soundtracks</h3>
+    
+    <div style="width:400px; display:flex; justify-content:center; align-items:center; margin:auto;">
+        <audio class="howl_audio" controls>
+            <source src="a/howl_og.webm" type="audio/webm" />
+            <source src="a/howl_og.mp3" type="audio/mp3" />
+            <p>
+                Here is a link to the audio file itself
+                <a href="a/howl_og.mp3">Audio here</a>
+            </p>
+        </audio>
+    </div>
+            
+    <div style="width:400px;display:flex; justify-content:center; align-items:center; margin:auto; margin-top:1rem;">
+        <div class="audio-controls">
+            <button id="fastf">>></button>
+            <button id="slow">slow down</button>
+            <button id="normalplay">normal</button>
+            <select name="pick" id="pick">
+                <option value="">pick a track</option>
+                <option value="a/howl_og.mp3">Original</option>
+                <option value="a/howl_musicbox.mp3">Music Box</option>
+            </select>
+        </div>
+    </div>
+
+    <hr />
+
 	<main id="container">
 
 		<section class="col1">
