@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5: Audio and Video</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="j/video_helpers.js" defer></script>
+    <script type="module" src="j/main.js" defer></script>
+</head>
+
+<body>
+    <h1>Howl's Moving Castle</h1>
+
+	<main id="container">
+
+		<section class="col1">
+
+			<video id="vid" width="450" poster="images/howl_art.png" controls>
+				<source src="assets/howl_trailer.mp4" type="video/mp4">
+				<source src="assets/howl_trailer.webm" type="video/webm">
+				<source src="assets/howl_trailer.ogv" type="video/ogg">
+				<track kind="captions" label="On" srclang="en" src="./captions/cap.vtt" default>
+
+				<!-- final fallback to text -->
+				<h2>Trailer Captions</h2>
+				<p>Howl: Where to? I'll be your escort this evening.<br />
+                   Lettie: Now Sophie, you need to be more careful. It's dangerous out there.<br />
+                   Witch of the Waste: His heart belongs to me~<br />
+                   Older Sophie: MmmmMMmmmh!<br />
+				</p>
+				<p>Older Sophie: Are you Howl?<br />
+                   Younger Sophie: I'm going to help you break the spell you're under!<br />
+                   Howl:You... you can't even break your own spell.<br />
+                   Witch of the Waste: Strapping young men are so difficult to deal with.<br />
+                   Younger Sophie: They say that the best blaze burns brightest when circumstances are at their worst.<br />
+                   Calcifer: Yeah, but no one really believes that.<br />
+                   Older Sophie: Look at that. They call this a castle?!<br />
+				</p>
+			</video>
+
+
+			<div id="controls">
+				<form id="video_form">
+					<fieldset>
+						<input type="button" id="play_button" onclick="" value="Play">
+						<input type="button" id="pause_button" onclick="" value="Pause">
+						<input type="button" id="mute" onclick="" value="Mute">
+						<input type="button" id="unmute" onclick="" value="Unmute">
+						<input type="button" id="rewind" onclick="" value="Beginning">
+						<input type="button" id="end" onclick="" value="End" >
+						<input type="button" id="seek" onclick="" value="Go to Statistics">
+					</fieldset>
+					<fieldset>
+						<select id="video_select">
+							<option>Select video format</option>
+							<option value="assets/howl_trailer.mp4">Howl Trailer(mp4)</option>
+							<option value="assets/howl_trailer.ogv">Howl Trailer(ogv)</option>
+							<option value="assets/howl_trailer.webm">Howl Trailer(webm)</option>
+						</select>
+					</fieldset>
+					<fieldset>
+						<label>Currently, rewind only works in Safari
+							<input type=button id="rw" onclick="" value="&lt; &lt;">
+						</label>
+						<input type=button id="ff" onclick="" value=">>">
+						<input type=button id="slo" onclick="" value="slow down">
+						<input type=button id="normal" onclick="" value="normal">
+					</fieldset>
+				</form>
+			</div>
+
+			<div class="pop hide">
+				<p>Test This!</p>
+			</div>
+		</section>
+
+		<section class="col2">
+			<iframe id="web" src=""></iframe>
+		</section>
+
+	</main>
+
+</body>
+
+</html>
