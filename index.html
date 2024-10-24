@@ -12,7 +12,7 @@
 <body>
     <h1>Howl's Moving Castle</h1>
 
-    <h3>Movie Soundtracks</h3>
+    <h2>Movie Soundtracks</h2>
     
     <div style="width:400px; display:flex; justify-content:center; align-items:center; margin:auto;">
         <audio class="howl_audio" controls>
@@ -71,15 +71,21 @@
 			<div id="controls">
 				<form id="video_form">
 					<fieldset>
-						<input type="button" id="play_button" onclick="" value="Play">
-						<input type="button" id="pause_button" onclick="" value="Pause">
-						<input type="button" id="mute" onclick="" value="Mute">
-						<input type="button" id="unmute" onclick="" value="Unmute">
-						<input type="button" id="rewind" onclick="" value="Beginning">
-						<input type="button" id="end" onclick="" value="End" >
-						<input type="button" id="seek" onclick="" value="Director">
+						<legend>Playback controls</legend>
+						<input type="button" id="play_button" onclick="playVideo(vid)" value="Play" />
+						<input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause" />
+						<input type="button" id="mute" onclick="muteVid(vid)" value="Mute" />
+						<input type="button" id="unmute" onclick="unmuteVid(vid)" value="Unmute" />
+
+						<fieldset>
+							<legend>Timestamp</legend>
+							<input type="button" id="rewind" onclick="seekVideo(vid, 0)" value="Beginning" />
+						<input type="button" id="end" onclick="seekVideo(vid, 54)" value="End" />
+						<input type="button" id="seek" onclick="seekVideo(vid, 10)" value="Director" />
+						</fieldset>
 					</fieldset>
 					<fieldset>
+						<legend>Select a video format</legend>
 						<select id="video_select">
 							<option>Select video format</option>
 							<option value="v/howl_trailer.mp4">Howl Trailer(mp4)</option>
@@ -88,11 +94,12 @@
 						</select>
 					</fieldset>
 					<fieldset>
-						<label>Currently, rewind only works in Safari<br /></label>
-                        <input type=button id="rw" onclick="" value="&lt; &lt;">
-						<input type=button id="ff" onclick="" value=">>">
-						<input type=button id="slo" onclick="" value="slow down">
-						<input type=button id="normal" onclick="" value="normal">
+						<legend>Playback speed</legend>
+						<p class="slomo">Currently, rewind only works in Safari</p>
+						<input type=button id="rw" onclick="playRate(vid,-1)" value="&lt; &lt;" />
+						<input type=button id="ff" onclick="playRate(vid,2)" value=">>" />
+						<input type=button id="slo" onclick="playRate(vid,.5)" value="slow down" />
+						<input type=button id="normal" onclick="playRate(vid,1)" value="normal" />
 					</fieldset>
 				</form>
 			</div>
@@ -103,7 +110,7 @@
 		</section>
 
 		<section class="col2">
-			<iframe id="web" src=""></iframe>
+			<iframe id="web" src="summary.html" title="dynamic content"></iframe>
 		</section>
 
 	</main>
