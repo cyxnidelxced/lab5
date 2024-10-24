@@ -19,6 +19,9 @@ function init() {
     howlAudio.load();
     howlAudio.volume = 0.5;
 
+    //set video's initial volume
+    vid.volume = 0.5;
+
     /**
      * create the button event listeners to control the audio
      */
